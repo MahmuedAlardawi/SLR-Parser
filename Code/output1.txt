@@ -1,0 +1,13 @@
+Stack                         Input                         Action                        
+---------------------------------------------------------------------------------
+[0]                           [a, a, b, c, c, $]            s3 (Shift 3)                  
+[0, a, 3]                     [a, b, c, c, $]               s3 (Shift 3)                  
+[0, a, 3, a, 3]               [b, c, c, $]                  s4 (Shift 4)                  
+[0, a, 3, a, 3, b, 4]         [c, c, $]                     r3 (Reduce by R -> ϵ)         
+[0, a, 3, a, 3, b, 4, R, 6]   [c, c, $]                     r4 (Reduce by R -> bR)        
+[0, a, 3, a, 3, R, 2]         [c, c, $]                     r1 (Reduce by T -> R)         
+[0, a, 3, a, 3, T, 5]         [c, c, $]                     s7 (Shift 7)                  
+[0, a, 3, a, 3, T, 5, c, 7]   [c, $]                        r2 (Reduce by T -> aTc)       
+[0, a, 3, T, 5]               [c, $]                        s7 (Shift 7)                  
+[0, a, 3, T, 5, c, 7]         [$]                           r2 (Reduce by T -> aTc)       
+[0, T, 1]                     [$]                           Accept                        
